@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Project 4</title>
+  <link href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .mdc-top-app-bar {
+      --mdc-theme-primary: #303638;
+    }
+
+    .mdc-button {
+      --mdc-theme-primary: #303638;
+    }
+
+    .mdc-list-item__text {
+      --mdc-theme-primary: #303638;
+    }
+
+    .mdc-list-item {
+      --mdc-theme-primary: #303638;
+    }
+
+    .view {
+      display: none;
+    }
+  </style>
+
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+  <aside class="mdc-drawer mdc-drawer--modal">
+    <div class="mdc-drawer__content">
+      <nav class="mdc-list">
+        <a class="mdc-list-item mdc-list-item--activated" id="home-button" href="#" aria-current="page">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+          <span class="mdc-list-item__text">Home</span>
+        </a>
+        <a class="mdc-list-item" id="data-button" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">table_chart</i>
+          <span class="mdc-list-item__text">Table</span>
+        </a>
+        <a class="mdc-list-item" id="about-button" href="#">
+          <i class="material-icons mdc-list-item__graphic" aria-hidden="true">show_chart</i>
+          <span class="mdc-list-item__text">Chart</span>
+        </a>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="mdc-drawer-scrim"></div>
+  <div>
+    <header class="mdc-top-app-bar">
+      <div class="mdc-top-app-bar__row">
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+          <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button">menu</button>
+          <span class="mdc-top-app-bar__title">Home</span>
+        </section>
+      </div>
+    </header>
+    <main class="mdc-top-app-bar--fixed-adjust">
+      <div class="view" id="home" style="display: block;">
+
+        <input id="countryInput" list="countries" class="mdc-text-field__input">
+
+        <datalist id="countries">
+
+        </datalist>
+
+        <button class="mdc-button mdc-button--raised" id="addCountryButton">
+          <span class="mdc-button__ripple"></span> Add Country
+        </button>
+
+        <button class="mdc-button mdc-button--raised" id="graphCountryButton">
+          <span class="mdc-button__ripple"></span> Graph
+        </button>
+
+        <ul id="countryList" class="mdc-list mdc-list--two-line">
+
+        </ul>
+      </div>
+
+      <div class="view" id="data">
+        <div class="mdc-data-table">
+          <table class="mdc-data-table__table" aria-label="Cases">
+            <thead>
+              <tr class="mdc-data-table__header-row">
+              </tr>
+            </thead>
+            <tbody id="tableBody" class="mdc-data-table__content">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="view" id="about">
+        <div id="chart_div"></div>
+      </div>
+    </main>
+  </div>
+
+  <script src="index.js" charset="utf-8"></script>
+</body>
+
+</html>
